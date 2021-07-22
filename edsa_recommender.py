@@ -34,7 +34,7 @@ import numpy as np
 
 # Custom Libraries
 from utils.data_loader import load_movie_titles
-#from recommenders.collaborative_based import collab_model
+from recommenders.collaborative_based import collab_model
 from recommenders.content_based import content_model
 
 from PIL import Image
@@ -56,7 +56,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Recommender System","Exploratory data analysis","Solution Overview","Company Information"]
+    page_options = ["Recommender System","Explore The Data","Solution Overview","Company Information"]
 
     
 
@@ -117,11 +117,63 @@ def main():
     # -------------------------------------------------------------------
 
     # ------------- SAFE FOR ALTERING/EXTENSION -------------------
+    if page_selection == "Explore The Data":
+        logo = Image.open("resources/imgs/Bestestflix.png")
+        st.image(logo)
+        st.image('resources/imgs/Image_header.png',use_column_width=True)
+
+
+        st.info("Exploratory Data Analysis")
+        st.markdown("Horizontal bargraph displaying ratings of the 250 most popular movies. ")
+        
+        most_pop_movies_ratings = Image.open("resources/imgs/most_pop_movies_ratings.png")
+        st.image(most_pop_movies_ratings)
+        st.write("")
+        st.write("")
+        st.write("Actors in the 250 most popular movies and the number of movies they featured in.")
+
+        actors = Image.open("resources/imgs/actors.png")
+        st.image(actors)
+        st.write("")
+        st.write("")
+
+        st.write("Directors from the 250 most popular movies and the number of movies they directed.")
+
+        directors = Image.open("resources/imgs/directors.png")
+        st.image(directors)
+        st.write("")
+        st.write("")
+
+        st.write("Graphs displaying Percentage of Genres and changes over decades.")
+        
+        genre_decade = Image.open("resources/imgs/genre_decade.png")
+        st.image(genre_decade)
+        st.write("")
+        st.write(" Here we will take a look at word clouds representing directors most popular movies and plot keywords. ")
+
+        bryan = Image.open("resources/imgs/bryan.png")
+        st.image(bryan)
+
+        st.write("")
+        st.write("")
+        chris = Image.open("resources/imgs/chris.png")
+        st.image(chris)
+
+        st.write("")
+        st.write("")
+        chris_c = Image.open("resources/imgs/chris_c.png")
+        st.image(chris_c)
+
+        st.write("")
+        st.write("")
+        george = Image.open("resources/imgs/george.png")
+        st.image(george)
+
+
     if page_selection == "Solution Overview":
         logo = Image.open("resources/imgs/Bestestflix.png")
         st.image(logo)
-        logo1 = Image.open("resources/imgs/Image_header1.png")
-        st.image(logo1)
+        st.image('resources/imgs/Image_header.png',use_column_width=True)
         st.title("Solution Overview")
         st.info("Content based Filtering")
         
@@ -132,6 +184,13 @@ def main():
         st.write(" In other words, these algorithms try to recommend items that are similar to those that a user liked in the past, or is examining in the present.")
         st.write("It does not rely on a user sign-in mechanism to generate this often temporary profile. In particular, various candidate items are compared with items previously rated by the user and the best-matching items are recommended. This approach has its roots in information retrieval and information filtering research.")
 
+        
+        st.write("")
+        st.write("")
+        st.info("Collaborative based filtering")
+        st.write(" Collaborative filtering is based on the assumption that people who agreed in the past will agree in the future, and that they will like similar kinds of items as they liked in the past. The system generates recommendations using only information about rating profiles for different users or items.")
+        st.write("The system generates recommendations using only information about rating profiles for different users or items. By locating peer users/items with a rating history similar to the current user or item, they generate recommendations using this neighborhood.")
+        st.write("A key advantage of the collaborative filtering approach is that it does not rely on machine analyzable content and therefore it is capable of accurately recommending complex items such as movies without requiring an understanding of the item itself. Many algorithms have been used in measuring user similarity or item similarity in recommender systems.")
 
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
@@ -171,7 +230,7 @@ def main():
 
         Will_Pic =Image.open('resources/imgs/Will_pic.png') 
         col3.image(Will_Pic,caption="Will Van Ieperen", width=150)
-        col3.write('CEO of Comedy')
+        col3.write('CEO of Lego')
 
         #Second row of pictures
         col1,col2, col3 = st.beta_columns(3)
@@ -193,7 +252,7 @@ def main():
         st.header('How it all began')
         st.write('We started as a group of 5 students who met each other on a university project. We bonded together around a love for solving problems with the help of AI. ')	
         st.write('We graduated with flying colours and entered successfull careers, never forgetting the joys of solving real world problems.')
-        st.write('A few years later we decided to meet up and start working part time on this project which we call Bestestflix.')
+        st.write('A few years later we decided to meet up and start working part time on this project which we call Bestestflix!')
 	
 
 
